@@ -1,0 +1,8 @@
+Parte 1
+docker image build . -t custom-caddy:1.0 
+docker container run --name my-caddy-app -p 8080:80 -d custom-caddy:1.0
+docker container stop my-caddy-app
+docker container rm my-caddy-app
+
+Parte 2
+docker container run --name my-caddy-app -p 8080:80 -v ./app:/usr/src/pages -v ./caddy:/etc/caddy -d custom-caddy:1.0
